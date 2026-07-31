@@ -1,0 +1,172 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./assets/fonts/dm-sans-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/manrope-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #eeeae1;
+  background: #06101c;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #06101c;
+  --ink-deep: #030a12;
+  --ink-soft: #091725;
+  --surface: #0d1c2b;
+  --surface-light: #112438;
+  --text: #eeeae1;
+  --text-soft: #d4d3cd;
+  --muted: #a1aeba;
+  --subtle: #718496;
+  --line: rgba(170, 193, 207, 0.14);
+  --line-strong: rgba(170, 193, 207, 0.28);
+  --cyan: #5dd8e7;
+  --cyan-bright: #83e9f2;
+  --blue: #6d9cff;
+  --amber: #d9a86c;
+  --amber-soft: #edcf9e;
+  --font-display: 'Manrope', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --space-1: 0.375rem;
+  --space-2: 0.625rem;
+  --space-3: 0.875rem;
+  --space-4: 1.25rem;
+  --space-5: 1.75rem;
+  --space-6: 2.5rem;
+  --space-7: 3.75rem;
+  --space-8: 5.5rem;
+  --space-9: 7.5rem;
+  --step--1: clamp(0.75rem, 0.72rem + 0.12vw, 0.82rem);
+  --step-0: clamp(0.94rem, 0.9rem + 0.18vw, 1.05rem);
+  --step-1: clamp(1.15rem, 1.02rem + 0.55vw, 1.45rem);
+  --step-2: clamp(1.5rem, 1.25rem + 1vw, 2.15rem);
+  --step-3: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+  --step-4: clamp(2.7rem, 1.9rem + 3.3vw, 5rem);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 26px;
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.24);
+  --shadow-deep: 0 36px 100px rgba(0, 0, 0, 0.38);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 180ms var(--ease-out);
+  --transition-slow: 520ms var(--ease-out);
+  --container: 1216px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 79% 4%, rgba(43, 123, 160, 0.11), transparent 31rem),
+    var(--ink);
+}
+
+body,
+button,
+a {
+  font-family: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+}
+
+button {
+  color: inherit;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--amber-soft);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(93, 216, 231, 0.42) var(--ink-deep);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--ink-deep);
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 3px solid var(--ink-deep);
+  border-radius: 20px;
+  background: rgba(93, 216, 231, 0.42);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cyan-bright);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--cyan-bright);
+  font-weight: 700;
+  transform: translateY(-150%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
