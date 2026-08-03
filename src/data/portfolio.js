@@ -3,6 +3,7 @@ export const profileLinks = {
   linkedin: 'https://www.linkedin.com/in/iharwalkar-akshay/',
   leetcode: 'https://leetcode.com/u/iharwalkar-akshay/',
   email: 'mailto:akshay.harwalkar183@gmail.com',
+  phone: 'tel:+61493544829',
 }
 
 export const navigation = [
@@ -16,38 +17,38 @@ export const navigation = [
 export const focusAreas = [
   {
     number: '01',
-    title: 'Responsible AI and AI Governance',
+    title: 'Responsible AI and Governance',
     description:
       'Exploring practical controls, traceability and evidence that make AI-assisted decisions easier to review.',
-    icon: 'governance',
+    visual: 'governance',
   },
   {
     number: '02',
-    title: 'Applied AI and RAG Systems',
+    title: 'Applied Machine Learning',
     description:
-      'Building retrieval workflows that connect model outputs to source material, citations and measurable checks.',
-    icon: 'ai',
+      'Building retrieval and predictive workflows that connect model outputs to sources, checks and understandable probabilities.',
+    visual: 'learning',
   },
   {
     number: '03',
-    title: 'Software Engineering and Cloud',
+    title: 'Full-stack Systems',
     description:
-      'Turning ideas into maintainable web applications with clear interfaces, useful APIs and deployable architecture.',
-    icon: 'code',
+      'Turning ideas into maintainable applications with clear interfaces, useful APIs and deployable architecture.',
+    visual: 'systems',
   },
   {
     number: '04',
-    title: 'Security-Conscious Development',
+    title: 'Security and Reliability',
     description:
       'Treating privacy, data handling, auditability and defensive thinking as design inputs—not afterthoughts.',
-    icon: 'security',
+    visual: 'security',
   },
 ]
 
 export const featuredProjects = [
   {
     number: '01',
-    title: 'Komply Risk Monitor',
+    title: 'Komply / Risk Monitor',
     status: 'Active build',
     statusTone: 'active',
     description:
@@ -74,11 +75,10 @@ export const featuredProjects = [
     ],
     repo: 'https://github.com/akshay9192/risk-monitor',
     visual: 'risk',
-    primary: true,
   },
   {
     number: '02',
-    title: 'FIFA World Cup 2026 Prediction System',
+    title: 'FIFA World Cup 2026 Prediction',
     status: 'In development',
     statusTone: 'progress',
     description:
@@ -111,9 +111,9 @@ export const featuredProjects = [
     status: 'Completed project',
     statusTone: 'complete',
     description:
-      'A comedic Python simulation game inspired by Seinfeld’s Soup Nazi episode, with character-specific rules, timed ordering, scoring, warnings and chaos-driven autoplay modes.',
+      'A comedic Python simulation game with character-specific rules, timed ordering, scoring, warnings and chaos-driven autoplay modes.',
     purpose:
-      'Turn a recognisable comedy premise into a small systems-design exercise with timing, rules and meaningful state.',
+      'Turn a playful queue premise into a small systems-design exercise with timing, rules and meaningful state.',
     built:
       'A Windows-compatible Pygame experience with playable characters, distinct win conditions, warnings, bans and autoplay modes.',
     decisions: [
@@ -132,7 +132,7 @@ export const featuredProjects = [
   },
   {
     number: '04',
-    title: 'Foot Ulcer Detection',
+    title: 'Foot Ulcer Detection Exploration',
     status: 'Exploratory ML project',
     statusTone: 'exploratory',
     description:
@@ -146,6 +146,7 @@ export const featuredProjects = [
       'No clinical or deployment claims',
       'Documentation-led interpretation of results',
     ],
+    note: 'Exploratory academic work only—not a clinically validated diagnostic tool and not medical advice.',
     technologies: ['Python', 'Machine learning', 'Computer vision'],
     repo: 'https://github.com/akshay9192/Foot-Ulcer-Detection',
     visual: 'vision',
@@ -156,52 +157,62 @@ export const experiments = [
   {
     title: 'Algorithms Visualizer',
     description: 'An educational experiment for visualising algorithms.',
+    stack: 'JavaScript · HTML · CSS',
+    status: 'Experiment',
     repo: 'https://github.com/akshay9192/Algorithms-visualizer',
+    visual: 'sort',
   },
   {
     title: 'HTTP Server',
     description: 'A build-your-own HTTP server programming challenge.',
+    stack: 'Programming challenge',
+    status: 'Learning build',
     repo: 'https://github.com/akshay9192/HTTPServer',
+    visual: 'request',
   },
   {
     title: 'Tokenizer',
     description:
       'A CodeCrafters-style interpreter and tokenizer implementation challenge.',
+    stack: 'Interpreter fundamentals',
+    status: 'Learning build',
     repo: 'https://github.com/akshay9192/Tokenizer',
+    visual: 'tokens',
   },
 ]
 
-export const skillGroups = [
-  { title: 'Languages', skills: ['Python', 'JavaScript', 'SQL'] },
+export const skillClusters = [
   {
-    title: 'Frontend',
-    skills: ['React', 'Vite', 'HTML', 'CSS', 'Tailwind CSS'],
+    id: 'interface',
+    label: 'Interface',
+    skills: ['React', 'JavaScript', 'HTML', 'CSS'],
   },
   {
-    title: 'Backend',
-    skills: ['FastAPI', 'REST APIs', 'SQLAlchemy'],
+    id: 'systems',
+    label: 'Systems',
+    skills: ['Python', 'FastAPI', 'SQL', 'Java'],
   },
   {
-    title: 'AI and Data',
-    skills: [
-      'RAG',
-      'Ollama',
-      'Qdrant',
-      'Sentence Transformers',
-      'XGBoost',
-      'Machine learning',
-      'Monte Carlo simulation',
-    ],
+    id: 'intelligence',
+    label: 'Intelligence',
+    skills: ['Machine Learning', 'Responsible AI', 'Qdrant'],
   },
   {
-    title: 'Tools and Platforms',
-    skills: [
-      'Git',
-      'GitHub',
-      'Docker',
-      'PostgreSQL',
-      'SQLite',
-      'Netlify',
-    ],
+    id: 'delivery',
+    label: 'Delivery',
+    skills: ['Git', 'GitHub', 'Docker'],
   },
 ]
+
+export const education = {
+  institution: 'University of Sydney',
+  degree: 'Master of Computer Science',
+  period: 'Current',
+  focus:
+    'Trustworthy AI systems, AI governance, security and applied software development.',
+  themes: [
+    'Practical, testable applications',
+    'Human-centred system design',
+    'Inspectable and grounded outputs',
+  ],
+}
