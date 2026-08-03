@@ -19,6 +19,8 @@ export function Navigation() {
     setIsOpen(false)
   }
 
+  const closeMenu = () => setIsOpen(false)
+
   useEffect(() => {
     const sections = navigation.map(({ href }) => document.querySelector(href)).filter(Boolean)
     const observer = new IntersectionObserver(
@@ -70,7 +72,7 @@ export function Navigation() {
   return (
     <header className="site-header">
       <nav className="nav-capsule" aria-label="Primary navigation">
-        <a className="brand" href="#home" aria-label="Akshay Harwalkar, home">
+        <a className="brand" href="#home" aria-label="Akshay Harwalkar, home" onClick={closeMenu}>
           <span>AH</span><span className="brand-name">Akshay Harwalkar</span>
         </a>
         <button ref={toggleRef} className="menu-toggle" type="button" aria-expanded={isOpen} aria-controls="primary-menu" aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={toggleMenu}>
@@ -86,7 +88,7 @@ export function Navigation() {
               </li>
             ))}
           </ul>
-          <div className="mobile-contact" aria-label="Contact links" onClick={() => setIsOpen(false)}>
+          <div className="mobile-contact" aria-label="Contact links" onClick={closeMenu}>
             <a href={profileLinks.email}>akshay.harwalkar183@gmail.com</a>
             <a href={profileLinks.phone}>0493 544 829</a>
             <a href={profileLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -94,9 +96,12 @@ export function Navigation() {
             <a href={profileLinks.leetcode} target="_blank" rel="noopener noreferrer">LeetCode</a>
           </div>
           {/* Enable only after public/Akshay_Harwalkar_Resume.pdf exists. */}
-          <button className="resume-button" type="button" disabled>
-            <Icon name="download" size={15} /> Résumé coming soon
-          </button>
+          <div className="resume-status">
+            <button className="resume-button" type="button" disabled aria-describedby="resume-note">
+              <Icon name="download" size={15} /> Résumé
+            </button>
+            <span id="resume-note">Résumé coming soon</span>
+          </div>
         </div>
       </nav>
     </header>

@@ -108,7 +108,7 @@ body {
   line-height: 1.7;
 }
 
-body.menu-open { overflow: hidden; }
+body.menu-open { overflow: hidden; overscroll-behavior: contain; }
 body, button, a { font-family: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { color: inherit; }
@@ -137,16 +137,18 @@ img, svg { display: block; max-width: 100%; }
 
 .skip-link:focus { transform: translateY(0); }
 
-* { scrollbar-width: thin; scrollbar-color: #4e5b60 var(--background-elevated); }
+* { scrollbar-width: thin; scrollbar-color: var(--text-muted) var(--background-elevated); }
 *::-webkit-scrollbar { width: 10px; height: 10px; }
 *::-webkit-scrollbar-track { background: var(--background-elevated); }
 *::-webkit-scrollbar-thumb {
   border: 2px solid var(--background-elevated);
   border-radius: 20px;
-  background: #4e5b60;
+  background: var(--text-muted);
 }
 
 section[id], main[id] { scroll-margin-top: 96px; }
+
+a, button { touch-action: manipulation; }
 
 @media (forced-colors: active) {
   :focus-visible { outline-color: Highlight; }
