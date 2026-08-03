@@ -6,51 +6,14 @@ export const profileLinks = {
   phone: 'tel:+61493544829',
 }
 
-export const navigation = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
-]
-
-export const focusAreas = [
+export const projects = [
   {
     number: '01',
-    title: 'Responsible AI and Governance',
-    description:
-      'Exploring practical controls, traceability and evidence that make AI-assisted decisions easier to review.',
-    visual: 'governance',
-  },
-  {
-    number: '02',
-    title: 'Applied Machine Learning',
-    description:
-      'Building retrieval and predictive workflows that connect model outputs to sources, checks and understandable probabilities.',
-    visual: 'learning',
-  },
-  {
-    number: '03',
-    title: 'Full-stack Systems',
-    description:
-      'Turning ideas into maintainable applications with clear interfaces, useful APIs and deployable architecture.',
-    visual: 'systems',
-  },
-  {
-    number: '04',
-    title: 'Security and Reliability',
-    description:
-      'Treating privacy, data handling, auditability and defensive thinking as design inputs—not afterthoughts.',
-    visual: 'security',
-  },
-]
-
-export const featuredProjects = [
-  {
-    number: '01',
+    slug: 'komply-risk-monitor',
     title: 'Komply / Risk Monitor',
+    shortTitle: 'Komply',
+    discipline: 'Responsible AI · Data systems',
     status: 'Active build',
-    statusTone: 'active',
     description:
       'A privacy-focused, locally hosted AI governance application for analysing regulatory frameworks and organisational evidence. It uses retrieval-augmented generation to produce citation-grounded compliance answers, structured risk assessments and PDF reporting while keeping document processing local.',
     purpose:
@@ -63,24 +26,19 @@ export const featuredProjects = [
       'PII redaction and tamper-evident audit history',
     ],
     note: 'Designed as a portfolio and compliance-research aid—not legal advice or a guarantee of compliance.',
-    technologies: [
-      'Python',
-      'FastAPI',
-      'Streamlit',
-      'Ollama',
-      'Qdrant',
-      'Sentence Transformers',
-      'SQLite',
-      'RAG',
-    ],
+    technologies: ['Python', 'FastAPI', 'Streamlit', 'Ollama', 'Qdrant', 'Sentence Transformers', 'SQLite', 'RAG'],
     repo: 'https://github.com/akshay9192/risk-monitor',
-    visual: 'risk',
+    art: 'project-komply',
+    alt: 'Abstract evidence fragments flowing through transparent governance layers toward a human-review checkpoint.',
+    signal: { cyan: '#5ed6e8', secondary: '#d2a15b', pattern: 0.22 },
   },
   {
     number: '02',
+    slug: 'world-cup-prediction',
     title: 'FIFA World Cup 2026 Prediction',
+    shortTitle: 'World Cup Prediction',
+    discipline: 'Machine learning · Full-stack',
     status: 'In development',
-    statusTone: 'progress',
     description:
       'A full-stack football prediction platform combining Poisson and XGBoost-assisted match modelling, user insights and a 10,000-iteration Monte Carlo tournament simulation.',
     purpose:
@@ -92,24 +50,19 @@ export const featuredProjects = [
       '10,000-iteration Monte Carlo simulation',
       'Explicit user-versus-model bias layer',
     ],
-    technologies: [
-      'Python',
-      'FastAPI',
-      'React',
-      'PostgreSQL',
-      'SQLAlchemy',
-      'XGBoost',
-      'Monte Carlo',
-      'Tailwind CSS',
-    ],
+    technologies: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'SQLAlchemy', 'XGBoost', 'Monte Carlo', 'Tailwind CSS'],
     repo: 'https://github.com/akshay9192/FIFA-World-Cup-2026---prediction',
-    visual: 'football',
+    art: 'project-fifa',
+    alt: 'Abstract football tournament probability paths flowing through match nodes and pitch geometry.',
+    signal: { cyan: '#63cdd4', secondary: '#d2a15b', pattern: 0.48 },
   },
   {
     number: '03',
+    slug: 'soup-queue-chaos',
     title: 'Soup Queue Chaos Simulator',
+    shortTitle: 'Soup Queue Chaos',
+    discipline: 'Simulation · Game systems',
     status: 'Completed project',
-    statusTone: 'complete',
     description:
       'A comedic Python simulation game with character-specific rules, timed ordering, scoring, warnings and chaos-driven autoplay modes.',
     purpose:
@@ -121,20 +74,19 @@ export const featuredProjects = [
       'Timed interaction and warning systems',
       'Procedural-style audio and autoplay modes',
     ],
-    technologies: [
-      'Python',
-      'Pygame',
-      'Game-state management',
-      'Procedural audio',
-    ],
+    technologies: ['Python', 'Pygame', 'Game-state management', 'Procedural audio'],
     repo: 'https://github.com/akshay9192/soup-nazi-queue-chaos-simulator',
-    visual: 'game',
+    art: 'project-soup',
+    alt: 'Geometric queue simulation with abstract customers, bowls, order tokens and service stations.',
+    signal: { cyan: '#69c8ce', secondary: '#c9785e', pattern: 0.7 },
   },
   {
     number: '04',
+    slug: 'foot-ulcer-detection',
     title: 'Foot Ulcer Detection Exploration',
+    shortTitle: 'Foot Ulcer Detection',
+    discipline: 'Computer vision · Research',
     status: 'Exploratory ML project',
-    statusTone: 'exploratory',
     description:
       'A machine-learning project exploring early detection of diabetic foot ulcers through computer-vision techniques. It is an academic exploration, not a clinically validated diagnostic tool.',
     purpose:
@@ -149,70 +101,23 @@ export const featuredProjects = [
     note: 'Exploratory academic work only—not a clinically validated diagnostic tool and not medical advice.',
     technologies: ['Python', 'Machine learning', 'Computer vision'],
     repo: 'https://github.com/akshay9192/Foot-Ulcer-Detection',
-    visual: 'vision',
+    art: 'project-foot-ulcer',
+    alt: 'Non-graphic foot-analysis concept with computer-vision grids, uncertainty regions and a review checkpoint.',
+    signal: { cyan: '#5ed6e8', secondary: '#d2a15b', pattern: 0.9 },
   },
 ]
 
-export const experiments = [
-  {
-    title: 'Algorithms Visualizer',
-    description: 'An educational experiment for visualising algorithms.',
-    stack: 'JavaScript · HTML · CSS',
-    status: 'Experiment',
-    repo: 'https://github.com/akshay9192/Algorithms-visualizer',
-    visual: 'sort',
-  },
-  {
-    title: 'HTTP Server',
-    description: 'A build-your-own HTTP server programming challenge.',
-    stack: 'Programming challenge',
-    status: 'Learning build',
-    repo: 'https://github.com/akshay9192/HTTPServer',
-    visual: 'request',
-  },
-  {
-    title: 'Tokenizer',
-    description:
-      'A CodeCrafters-style interpreter and tokenizer implementation challenge.',
-    stack: 'Interpreter fundamentals',
-    status: 'Learning build',
-    repo: 'https://github.com/akshay9192/Tokenizer',
-    visual: 'tokens',
-  },
-]
-
-export const skillClusters = [
-  {
-    id: 'interface',
-    label: 'Interface',
-    skills: ['React', 'JavaScript', 'HTML', 'CSS'],
-  },
-  {
-    id: 'systems',
-    label: 'Systems',
-    skills: ['Python', 'FastAPI', 'SQL', 'Java'],
-  },
-  {
-    id: 'intelligence',
-    label: 'Intelligence',
-    skills: ['Machine Learning', 'Responsible AI', 'Qdrant'],
-  },
-  {
-    id: 'delivery',
-    label: 'Delivery',
-    skills: ['Git', 'GitHub', 'Docker'],
-  },
+export const profileIndex = [
+  { label: 'Responsible AI', detail: 'Traceability, evidence and human review' },
+  { label: 'Machine learning', detail: 'Predictive and retrieval workflows' },
+  { label: 'Data systems', detail: 'Structured information and useful interfaces' },
+  { label: 'Full-stack development', detail: 'Maintainable applications and APIs' },
+  { label: 'Security and reliability', detail: 'Privacy, auditability and defensive design' },
 ]
 
 export const education = {
   institution: 'University of Sydney',
   degree: 'Master of Computer Science',
-  period: 'Current',
-  focus:
-    'Trustworthy AI systems, AI governance, security and applied software development.',
-  themes: [
-    'Practical, testable applications',
-    'Human-centred system design',
-    'Inspectable and grounded outputs',
-  ],
+  location: 'Sydney, Australia',
+  focus: 'Trustworthy AI systems, AI governance, security and applied software development.',
 }
