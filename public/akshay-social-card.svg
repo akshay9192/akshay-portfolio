@@ -1,20 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
-    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
-      <path d="M64 0H0V64" fill="none" stroke="#26394e" stroke-width="1"/>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M72 0H0V72" fill="none" stroke="#e8e6e1" stroke-opacity=".055"/>
     </pattern>
-    <radialGradient id="glow" cx="80%" cy="20%" r="70%">
-      <stop offset="0" stop-color="#1e6077" stop-opacity=".6"/>
-      <stop offset="1" stop-color="#07111f" stop-opacity="0"/>
+    <radialGradient id="fade" cx="76%" cy="45%" r="52%">
+      <stop offset="0" stop-color="#17343a" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#08090b" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect width="1200" height="630" fill="#07111f"/>
-  <rect width="1200" height="630" fill="url(#grid)" opacity=".45"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-  <circle cx="1060" cy="100" r="210" fill="none" stroke="#56d6e8" stroke-opacity=".15"/>
-  <circle cx="1060" cy="100" r="140" fill="none" stroke="#5790ff" stroke-opacity=".14"/>
-  <text x="92" y="160" fill="#56d6e8" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">AKSHAY HARWALKAR</text>
-  <text x="92" y="285" fill="#eaf0f6" font-family="Arial, sans-serif" font-size="66" font-weight="600">Computer Science postgraduate</text>
-  <text x="92" y="370" fill="#9baabd" font-family="Arial, sans-serif" font-size="58">building trustworthy, practical software.</text>
-  <text x="92" y="510" fill="#9baabd" font-family="Arial, sans-serif" font-size="25">Responsible AI · AI governance · Software engineering</text>
+  <rect width="1200" height="630" fill="#08090b"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#fade)"/>
+  <g transform="translate(875 315)" fill="none">
+    <path d="M-166 48C-90-152 106-190 194-8C265 139 83 227-93 149C-145 125-184 88-166 48Z" stroke="#5ed6e8" stroke-opacity=".4" stroke-width="2"/>
+    <path d="M-118-48C-18-126 113-82 142 20C164 97 68 149-37 120C-139 91-186 6-118-48Z" stroke="#5ed6e8" stroke-opacity=".22" stroke-dasharray="7 11"/>
+    <path d="M-196 18H218" stroke="#5ed6e8" stroke-opacity=".2"/>
+    <circle cx="-92" cy="18" r="7" fill="#5ed6e8"/>
+    <circle cx="38" cy="18" r="6" fill="#d2a15b"/>
+    <circle cx="168" cy="18" r="6" fill="#e8e6e1"/>
+  </g>
+  <g font-family="Manrope, Arial, sans-serif">
+    <text x="76" y="104" fill="#5ed6e8" font-size="20" font-weight="500" letter-spacing="4">AKSHAY HARWALKAR</text>
+    <text x="76" y="266" fill="#e8e6e1" font-size="84" font-weight="400" letter-spacing="-4">Creative Engineer</text>
+    <text x="76" y="348" fill="#a6a7a6" font-size="32" font-weight="400">Signals beneath the surface.</text>
+    <text x="76" y="518" fill="#73777b" font-family="Consolas, monospace" font-size="17" letter-spacing="2">RESPONSIBLE AI  /  DATA SYSTEMS  /  FULL-STACK SOFTWARE</text>
+  </g>
+  <line x1="76" y1="558" x2="1124" y2="558" stroke="#e8e6e1" stroke-opacity=".12"/>
 </svg>

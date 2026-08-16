@@ -35,65 +35,36 @@
 :root {
   color-scheme: dark;
   font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
-  color: #e8e5de;
-  background: #0b0d0f;
+  color: #e8e6e1;
+  background: #08090b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-
-  --background: #0b0d0f;
-  --background-elevated: #111417;
-  --surface: #15191d;
-  --surface-soft: #191e23;
-  --text-primary: #e8e5de;
-  --text-secondary: #aaa9a5;
-  --text-muted: #777b80;
-  --border: rgba(232, 229, 222, 0.12);
-  --cyan: #60d9e8;
-  --amber: #d5a253;
-
-  /* Compatibility aliases for the existing art-directed components. */
-  --paper: var(--background);
-  --paper-light: var(--background-elevated);
-  --paper-deep: var(--surface);
-  --ink: var(--text-primary);
-  --graphite: var(--text-secondary);
-  --quiet: var(--text-muted);
-  --night: var(--background);
-  --night-soft: var(--background-elevated);
-  --night-2: var(--surface);
-  --ivory: var(--text-primary);
-  --cyan-bright: var(--cyan);
-  --cyan-dark: var(--cyan);
-  --amber-light: var(--amber);
-  --line: var(--border);
-  --line-dark: var(--border);
-  --font-display: 'Manrope', 'Manrope Fallback', system-ui, sans-serif;
-  --font-body: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
-  --font-mono: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
-  --container: 1200px;
-  --wide: 1320px;
-  --gutter: clamp(1rem, 3.2vw, 2.94rem);
-  --space-1: 4px;
-  --space-2: 7px;
-  --space-3: 11px;
-  --space-4: 18px;
-  --space-5: 29px;
-  --space-6: 47px;
-  --space-7: 76px;
-  --space-8: 123px;
-  --radius-sm: 9px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+  --background: #08090b;
+  --background-secondary: #0d1013;
+  --surface: #13171b;
+  --text: #e8e6e1;
+  --text-secondary: #a6a7a6;
+  --text-muted: #73777b;
+  --cyan: #5ed6e8;
+  --amber: #d2a15b;
+  --risk: #bc625f;
+  --border: rgba(232, 230, 225, 0.12);
+  --border-strong: rgba(232, 230, 225, 0.22);
+  --heading: 'Manrope', 'Manrope Fallback', system-ui, sans-serif;
+  --body: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
+  --mono: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --gutter: clamp(1rem, 3vw, 3.5rem);
+  --max: 1540px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 * { box-sizing: border-box; }
 
 html {
-  scroll-behavior: auto;
-  scroll-padding-top: 0;
+  min-width: 320px;
+  scroll-behavior: smooth;
   background: var(--background);
 }
 
@@ -102,64 +73,69 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: clip;
-  color: var(--text-primary);
+  color: var(--text);
   background: var(--background);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+  line-height: 1.65;
+}
+
+body::before {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
 }
 
 body.menu-open { overflow: hidden; overscroll-behavior: contain; }
-body, button, a { font-family: inherit; }
-button, a { -webkit-tap-highlight-color: transparent; }
+body, button, a { font-family: var(--body); }
+button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 button { color: inherit; }
 a { color: inherit; }
-img, svg { display: block; max-width: 100%; }
+img, svg, canvas { display: block; max-width: 100%; }
+button, input { font: inherit; }
 ::selection { color: var(--background); background: var(--cyan); }
 
 :focus-visible {
   outline: 2px solid var(--cyan);
-  outline-offset: 4px;
+  outline-offset: 5px;
 }
+
+main:focus { outline: 0; }
 
 .skip-link {
   position: fixed;
   z-index: 1000;
   top: 12px;
   left: 12px;
-  padding: 11px 16px;
-  border-radius: 99px;
+  padding: 10px 16px;
   color: var(--background);
   background: var(--cyan);
   font-weight: 600;
-  transform: translateY(-180%);
-  transition: transform 160ms var(--ease);
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 180ms var(--ease-out);
 }
-
 .skip-link:focus { transform: translateY(0); }
 
-* { scrollbar-width: thin; scrollbar-color: var(--text-muted) var(--background-elevated); }
+* { scrollbar-width: thin; scrollbar-color: var(--text-muted) var(--background-secondary); }
 *::-webkit-scrollbar { width: 10px; height: 10px; }
-*::-webkit-scrollbar-track { background: var(--background-elevated); }
-*::-webkit-scrollbar-thumb {
-  border: 2px solid var(--background-elevated);
-  border-radius: 20px;
-  background: var(--text-muted);
+*::-webkit-scrollbar-track { background: var(--background-secondary); }
+*::-webkit-scrollbar-thumb { border: 2px solid var(--background-secondary); background: var(--text-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-
-section[id], main[id] { scroll-margin-top: 96px; }
-
-a, button { touch-action: manipulation; }
 
 @media (forced-colors: active) {
   :focus-visible { outline-color: Highlight; }
-  .button, .status, .tech-node, .nav-capsule { border: 1px solid ButtonText; }
-  .section-number, .identity-number, .nav-index { color: LinkText; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    animation: none !important;
-    transition: none !important;
-  }
+  a { forced-color-adjust: none; }
 }
