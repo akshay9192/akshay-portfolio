@@ -1,16 +1,15 @@
 # Akshay Harwalkar — Creative Developer Portfolio
 
-An immersive, accessible portfolio for Akshay Harwalkar, a Master of Computer Science student at the University of Sydney. The experience is organised around the concept **“Signals beneath the surface”**: visible interfaces sit above deeper evidence, data, decisions and human review.
+A production-ready single-page portfolio for Akshay Harwalkar, a Master of Computer Science student at the University of Sydney. The site presents responsible AI, data, machine-learning and full-stack projects through a clear dark editorial interface.
 
 ## Technology stack
 
 - React 19 and Vite 8
-- Three.js, loaded through a lazy route chunk for the Signal Core only
-- Hash-based route views compatible with static hosts and browser Back
-- Modern CSS with native scrolling and responsive art direction
-- Locally packaged Manrope and DM Sans webfonts
+- Three.js, lazily loaded for the decorative hero Signal Core
+- Hash-based project and homepage-section routes for static hosting
+- Locally hosted Manrope and DM Sans fonts
 - Locally hosted responsive WebP project artwork
-- SVG/CSS code-native icons, grids, signal lines, noise and social artwork
+- CSS/SVG fallbacks for mobile, reduced motion and unavailable WebGL
 
 The site has no backend, analytics, runtime third-party scripts, browser-side API calls or application secrets.
 
@@ -24,67 +23,61 @@ npm run dev
 Quality and production checks:
 
 ```bash
-npm run lint
-npm run build
-npm audit --omit=dev
-npm run preview
+npm.cmd run lint
+npm.cmd run build
+npm.cmd audit --omit=dev
+npm.cmd run preview
 ```
 
 ## Experience architecture
 
-- `#/` — immersive home and interactive project index
-- `#/project/komply-risk-monitor`
+- `#/` — homepage hero
+- `#/work` — selected work section
+- `#/about` — profile, education and technology section
+- `#/contact` — contact section
+- `#/project/sentinel-llm`
 - `#/project/world-cup-prediction`
 - `#/project/soup-queue-chaos`
 - `#/project/foot-ulcer-detection`
-- `#/profile` — identity, education and technical index
-- `#/contact` — verified contact channels and copy-email action
 
-Hash routes allow every view to load directly on GitHub Pages and Netlify without server rewrites. All important project information exists as semantic HTML outside WebGL.
+The legacy `#/profile` route is normalised to `#/about`. The existing `#/contact` link now opens the homepage contact section. Detailed case studies remain separate routes, and browser Back returns to the previous homepage section.
 
 ## Signal Core
 
-The home view lazily imports a restrained Three.js experience. It uses a deforming low-density icosahedral surface, evidence points and a project-change pulse. Generated artwork appears behind the translucent surface while shader pattern and colour balance respond to project selection.
+The Signal Core is the site's single signature visual. It is decorative and appears only in the hero. The renderer:
 
-The renderer:
+- runs only on non-mobile, fine-pointer devices;
+- uses slow, restrained movement and subtle pointer response;
+- caps device pixel ratio at 2;
+- pauses outside the viewport and while the document is hidden;
+- disables WebGL under reduced motion;
+- uses a static CSS fallback on mobile and without WebGL;
+- disposes geometry, materials, the renderer and WebGL context on unmount.
 
-- clamps device pixel ratio to 2;
-- reduces geometry on small screens;
-- pauses offscreen and while the document is hidden;
-- responds only to normal pointer input;
-- has no post-processing or runtime textures;
-- disposes geometry, materials, renderer and context on unmount;
-- falls back to a CSS signal form when WebGL is unavailable;
-- renders a static form for reduced motion.
+All project content remains semantic HTML and never depends on WebGL.
 
-## Content and assets
+## Content and artwork
 
 - Verified project/profile data: `src/data/portfolio.js`
-- Route composition: `src/App.jsx`, `src/views/`
-- Signal Core and interaction components: `src/components/`
-- Responsive/system styling: `src/App.css`, `src/index.css`
+- Homepage composition: `src/views/HomeView.jsx`
+- Case studies: `src/views/CaseStudyView.jsx`
+- Responsive styling: `src/App.css`, `src/index.css`
 - Optimised generated artwork: `public/images/`
 - Preserved generated PNG sources: `docs/art-sources/`
-- Exact final artwork prompts and asset policy: `docs/art-direction.md`
-- SEO, social metadata and Person JSON-LD: `index.html`
+- Artwork prompts and policy: `docs/art-direction.md`
+- SEO and Person JSON-LD: `index.html`
 
 Generated images are explicitly identified as conceptual artwork rather than application screenshots. They contain no project metrics, product UI, official FIFA marks, medical claims or legal claims.
 
-## Portrait workflow
+## Medium portrait source
 
-The profile deliberately does not substitute an emblem or generated face. Supply the original photograph at:
+The portrait was retrieved from the public RSS author image for `https://medium.com/@akshay.harwalkar183`, whose channel identifies the author as Akshay Harwalkar. The RSS image ID exposed a 1200 × 1600 JPEG source through Medium's public image CDN.
 
-```text
-public/images/akshay-portrait-source.jpg
-```
+- Metadata-stripped source: `public/images/akshay-portrait-source.jpeg`
+- Responsive formats: 320 px, 640 px and 960 px AVIF/WebP
+- Native fallback dimensions: 1200 × 1600
 
-The source must be preserved. The integration workflow should correct orientation, crop intentionally, apply restrained colour correction, retain natural skin texture and export responsive WebP derivatives headed by:
-
-```text
-public/images/akshay-portrait.webp
-```
-
-No generative face alteration is permitted.
+The source orientation is corrected and EXIF/location metadata is removed. The portrait is not generated or cosmetically altered; presentation uses only conservative colour treatment and responsive cropping.
 
 ## Deployment compatibility
 
@@ -92,18 +85,16 @@ The default Vite build uses `/akshay-portfolio/` for GitHub Pages:
 
 `https://akshay9192.github.io/akshay-portfolio/`
 
-The included workflow lints, builds and deploys `dist` on pushes to `main`. `netlify.toml` overrides the build base to `/` for Netlify. No source change is needed between hosts.
+The included GitHub Actions workflow lints, builds and deploys `dist` on pushes to `main`. `netlify.toml` overrides the build base to `/` for Netlify. No source change is needed between hosts.
 
 ## Accessibility and motion
 
-The site includes a skip link, semantic landmarks, logical headings, visible focus, 44 px touch targets, keyboard project navigation, touch-specific two-step selection, Escape handling, browser Back support, safe external links, descriptive image alternatives and static project content outside WebGL. Reduced motion removes route animation, loader motion and WebGL deformation.
+The site includes a skip link, semantic landmarks, logical headings, visible focus, 44 px touch targets, direct project links, an accessible mobile menu with Escape handling and focus restoration, browser Back support, safe external links and reduced-motion/forced-colours modes.
 
-Native scrolling is preserved; there is no scroll-jacking or endless accessibility-tree duplication.
+There is no scroll-jacking, wheel interception, forced horizontal scrolling, artificial loading delay or hover-only project information.
 
 ## Security
 
-This is a static public portfolio with no authentication, database, form submission or sensitive-data collection. External new-tab links use `rel="noopener noreferrer"`; contact actions use the verified `mailto:` and `tel:` targets.
+This is a static public portfolio with no authentication, database, form submission or sensitive-data collection. External new-tab links use `rel="noopener noreferrer"`; contact actions use verified `mailto:` and `tel:` targets.
 
-Netlify applies the response headers in `public/_headers`, including CSP, HSTS, anti-framing, MIME-sniffing, referrer, permissions and opener policies. GitHub Pages cannot apply repository-defined response headers, so `index.html` carries the CSP subset supported by a meta policy. Scripts, fonts and runtime images are self-hosted; `unsafe-eval`, mixed content and external runtime scripts are not allowed.
-
-The inline-style exception supports project-specific CSS custom properties only. No untrusted HTML is injected. Production source maps are not emitted.
+Netlify applies the response headers in `public/_headers`, including CSP, HSTS, anti-framing, MIME-sniffing, referrer, permissions and opener policies. GitHub Pages cannot apply repository-defined response headers, so `index.html` carries the supported CSP subset as a meta policy. Scripts, fonts and runtime images are self-hosted; `unsafe-eval`, mixed content and external runtime scripts are not allowed. Production source maps are not emitted.

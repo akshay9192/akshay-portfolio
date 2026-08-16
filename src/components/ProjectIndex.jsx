@@ -1,52 +1,32 @@
-import { useRef } from 'react'
 import { Icon } from './Icon'
+import { ProjectArt } from './ProjectArt'
 
-export function ProjectIndex({ projects, activeIndex, onSelect }) {
-  const rowRefs = useRef([])
-
-  const selectTouch = (event, index) => {
-    if (!window.matchMedia('(hover: none)').matches || activeIndex === index) return
-    event.preventDefault()
-    onSelect(index)
-  }
-
-  const onKeyDown = (event, index) => {
-    if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return
-    event.preventDefault()
-    let next = index
-    if (event.key === 'ArrowDown') next = (index + 1) % projects.length
-    if (event.key === 'ArrowUp') next = (index - 1 + projects.length) % projects.length
-    if (event.key === 'Home') next = 0
-    if (event.key === 'End') next = projects.length - 1
-    rowRefs.current[next]?.focus()
-    onSelect(next)
-  }
-
+export function ProjectIndex({ projects }) {
   return (
-    <ol className="project-index" aria-label="Featured projects">
-      {projects.map((project, index) => (
-        <li key={project.slug} className={activeIndex === index ? 'is-active' : ''}>
-          <a
-            className="project-row"
-            ref={(node) => { rowRefs.current[index] = node }}
-            href={`#/project/${project.slug}`}
-            onMouseEnter={() => onSelect(index)}
-            onFocus={() => onSelect(index)}
-            onClick={(event) => selectTouch(event, index)}
-            onKeyDown={(event) => onKeyDown(event, index)}
-            data-cursor="View"
-          >
-            <span className="project-number">{project.number}</span>
-            <span className="project-name">{project.title}</span>
-            <span className="project-discipline">{project.discipline}</span>
-            <span className="project-status">{project.status}</span>
-            <span className="project-direction" aria-hidden="true"><Icon name="arrow" size={20} /></span>
+    <div className="project-list" aria-label="Featured projects">
+      {projects.map((project) => (
+        <article className="project-card" key={project.slug}>
+          <a className="project-image-link" href={`#/project/${project.slug}`} aria-label={`Read the ${project.title} case study`}>
+            <ProjectArt project={project} />
           </a>
-          <a className="project-repository" href={project.repo} target="_blank" rel="noopener noreferrer" data-cursor="Open">
-            Repository<span className="sr-only"> for {project.title}</span><Icon name="external" size={13} />
-          </a>
-        </li>
+          <div className="project-copy">
+            <div className="project-meta">
+              <span>{project.number}</span>
+              <span>{project.discipline}</span>
+              <span>{project.status}</span>
+            </div>
+            <h3><a href={`#/project/${project.slug}`}>{project.title}</a></h3>
+            <p>{project.purpose}</p>
+            <ul className="project-tech" aria-label={`${project.title} technologies`}>
+              {project.technologies.slice(0, 3).map((technology) => <li key={technology}>{technology}</li>)}
+            </ul>
+            <div className="project-actions">
+              <a className="button button-secondary" href={`#/project/${project.slug}`}>Case study <Icon name="arrow" size={17} /></a>
+              <a className="repository-inline" href={project.repo} target="_blank" rel="noopener noreferrer">Repository <Icon name="external" size={14} /></a>
+            </div>
+          </div>
+        </article>
       ))}
-    </ol>
+    </div>
   )
 }

@@ -6,18 +6,19 @@ This portfolio uses an original visual metaphor: every software system has a vis
 
 The four final images were created in built-in image-generation mode. The original PNG sources are retained in `docs/art-sources/`; responsive WebP derivatives live in `public/images/`.
 
-### Komply / Risk Monitor
+### Sentinel LLM
 
 ```text
 Use case: stylized-concept
-Asset type: immersive portfolio case-study artwork
-Primary request: An abstract responsible-AI governance system where evidence fragments travel through transparent technical layers toward a clearly visible human-review checkpoint.
-Style/medium: premium dark editorial technology artwork, precise, cinematic, restrained; sophisticated dimensional composition rather than a user interface
-Composition/framing: 16:10 landscape, strong central flow through layered depth with intentional negative space
-Lighting/mood: controlled low-key cinematic lighting, calm and credible
-Color palette: charcoal, deep navy, governance cyan, restrained amber, and very small risk-red details
-Constraints: no text, no letters, no numbers, no logos, no people, no legal symbols, no fake dashboard, no fake statistics, no watermark; no misleading functional interface elements
-Avoid: robot, AI brain, cyberpunk city, generic glowing circuit board, neon excess, glassmorphism UI, stock imagery
+Asset type: premium portfolio case-study artwork
+Primary request: Create entirely original conceptual artwork of a local-first AI governance system. Evidence signals pass through several visibly distinct layered validation and deterministic authorisation boundaries toward a human-controlled review endpoint, arranged around a central local AI signal core. The image must communicate architectural intent and review boundaries without suggesting that a finished application or implemented runtime controls exist.
+Scene/backdrop: deep charcoal technical environment, dark elegant and uncluttered
+Style/medium: premium editorial 3D technical illustration, subtle matte metal and restrained translucent glass, conceptual rather than literal
+Composition/framing: wide 16:10 landscape composition, central signal core with an orderly left-to-right evidence path crossing layered boundaries and ending at a restrained abstract human-review control point; generous negative space; no crop-critical details near edges
+Lighting/mood: calm, credible, low-key studio lighting
+Color palette: deep charcoal and black, calm cyan evidence signals, very limited amber only at the human-review endpoint
+Constraints: no text, no letters, no numbers, no logos, no official AnythingLLM branding, no shields, no padlocks, no robot head, no people or faces, no code rain, no fake dashboards, no fake statistics, no application screenshot, no watermark; do not visually imply planned governance features are complete
+Avoid: cyberpunk neon excess, busy circuitry, glossy UI cards, security clichés, branding, interface chrome
 ```
 
 ### World Cup prediction
@@ -66,5 +67,5 @@ Avoid: disturbing imagery, fake clinical UI, exaggerated medical certainty, neon
 
 - Generated visuals contain no text, logos, official branding, fake metrics or application interfaces.
 - Case studies label each image as generated conceptual artwork.
-- The supplied portrait remains a separate non-generative workflow and must preserve identity.
-- Grids, signal lines, evidence nodes, loader, icons, focus states and noise are rendered with CSS, SVG or WebGL.
+- The portrait is sourced from Akshay Harwalkar's public Medium RSS author avatar and remains a separate non-generative workflow.
+- Grids, signal lines, evidence nodes, icons, focus states and noise are rendered with CSS, SVG or WebGL.

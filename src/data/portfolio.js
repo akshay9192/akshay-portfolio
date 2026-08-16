@@ -2,6 +2,7 @@ export const profileLinks = {
   github: 'https://github.com/akshay9192/',
   linkedin: 'https://www.linkedin.com/in/iharwalkar-akshay/',
   leetcode: 'https://leetcode.com/u/iharwalkar-akshay/',
+  medium: 'https://medium.com/@akshay.harwalkar183',
   email: 'mailto:akshay.harwalkar183@gmail.com',
   phone: 'tel:+61493544829',
 }
@@ -9,27 +10,27 @@ export const profileLinks = {
 export const projects = [
   {
     number: '01',
-    slug: 'komply-risk-monitor',
-    title: 'Komply / Risk Monitor',
-    shortTitle: 'Komply',
-    discipline: 'Responsible AI · Data systems',
-    status: 'Active build',
+    slug: 'sentinel-llm',
+    title: 'Sentinel LLM',
+    shortTitle: 'Sentinel',
+    discipline: 'AI governance · Security architecture',
+    status: 'Phase 2A · documented milestone',
     description:
-      'A privacy-focused, locally hosted AI governance application for analysing regulatory frameworks and organisational evidence. It uses retrieval-augmented generation to produce citation-grounded compliance answers, structured risk assessments and PDF reporting while keeping document processing local.',
+      'An independent AnythingLLM derivative exploring how local-first AI systems can separate probabilistic proposals from deterministic authorisation, reviewable evidence and controlled execution boundaries. The local baseline is validated; Sentinel governance runtime controls are not yet implemented.',
     purpose:
-      'Help teams examine policy evidence against regulatory frameworks without sending sensitive documents to a hosted model.',
+      'Explore how local-first AI systems can separate probabilistic model proposals from deterministic authorisation, reviewable evidence and controlled execution boundaries.',
     built:
-      'A local document-to-assessment workflow spanning ingestion, retrieval, grounded answers, structured risk review and PDF reporting.',
+      'A pinned AnythingLLM v1.15.0 foundation with validated local Ollama chat, embeddings, LanceDB retrieval and grounded RAG, plus a documented threat model, six architecture decisions and the version-one logical audit-event schema.',
     decisions: [
-      'Local Ollama inference and Qdrant storage',
-      'Citation and hallucination-risk checks',
-      'PII redaction and tamper-evident audit history',
+      'Treat model output, retrieved documents and tool output as untrusted inputs',
+      'Keep LLM output separate from deterministic authorisation decisions',
+      'Define the audit contract before implementing validators, persistence or enforcement',
     ],
-    note: 'Designed as a portfolio and compliance-research aid—not legal advice or a guarantee of compliance.',
-    technologies: ['Python', 'FastAPI', 'Streamlit', 'Ollama', 'Qdrant', 'Sentence Transformers', 'SQLite', 'RAG'],
-    repo: 'https://github.com/akshay9192/risk-monitor',
-    art: 'project-komply',
-    alt: 'Abstract evidence fragments flowing through transparent governance layers toward a human-review checkpoint.',
+    note: 'Current scope: the local AnythingLLM, Ollama and LanceDB foundation is validated and the security architecture and audit-event schema are documented. A machine-readable audit validator, persistent audit chain, deterministic policy enforcement, restricted execution and governance UI remain planned. Sentinel is independent and is not affiliated with or endorsed by Mintplex Labs.',
+    technologies: ['AnythingLLM', 'Ollama', 'LanceDB', 'Node.js', 'React', 'Prisma', 'Retrieval-augmented generation', 'AI governance', 'Security architecture'],
+    repo: 'https://github.com/akshay9192/sentinel-llm',
+    art: 'project-sentinel',
+    alt: 'Conceptual AI governance system showing evidence passing through layered authorisation boundaries toward a human-controlled review point.',
     signal: { cyan: '#5ed6e8', secondary: '#d2a15b', pattern: 0.22 },
   },
   {
@@ -38,19 +39,20 @@ export const projects = [
     title: 'FIFA World Cup 2026 Prediction',
     shortTitle: 'World Cup Prediction',
     discipline: 'Machine learning · Full-stack',
-    status: 'In development',
+    status: 'Published experimental project',
     description:
-      'A full-stack football prediction platform combining Poisson and XGBoost-assisted match modelling, user insights and a 10,000-iteration Monte Carlo tournament simulation.',
+      'Tournament Atlas is an independent experimental fan project with a React editorial interface and FastAPI backend for exploring a 48-team, 104-match replay through Poisson-based probabilities, accuracy, bias and methodology views.',
     purpose:
       'Make tournament forecasts explorable while separating model probabilities from a user’s own football intuition.',
     built:
-      'A FastAPI and React system for score modelling, match outcomes, tournament simulation, result tracking and recalibration.',
+      'A React single-page frontend with an offline saved replay and background API refresh, backed by FastAPI, cached 100–5,000-run tournament simulation, SQLite locally and optional PostgreSQL deployment.',
     decisions: [
-      'Poisson scoring with XGBoost-assisted modelling',
-      '10,000-iteration Monte Carlo simulation',
-      'Explicit user-versus-model bias layer',
+      'Poisson score probabilities with explicit uncertainty and limitations',
+      'Cached tournament simulation constrained to 100–5,000 runs',
+      'Offline saved replay remains readable while the API refreshes in the background',
     ],
-    technologies: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'SQLAlchemy', 'XGBoost', 'Monte Carlo', 'Tailwind CSS'],
+    note: 'Independent experimental fan project. It is not affiliated with or endorsed by FIFA, and the model is not validated for betting or financial decisions.',
+    technologies: ['Python', 'FastAPI', 'React', 'SQLite', 'PostgreSQL', 'SQLAlchemy', 'Poisson modelling', 'Tailwind CSS'],
     repo: 'https://github.com/akshay9192/FIFA-World-Cup-2026---prediction',
     art: 'project-fifa',
     alt: 'Abstract football tournament probability paths flowing through match nodes and pitch geometry.',
@@ -104,6 +106,40 @@ export const projects = [
     art: 'project-foot-ulcer',
     alt: 'Non-graphic foot-analysis concept with computer-vision grids, uncertainty regions and a review checkpoint.',
     signal: { cyan: '#5ed6e8', secondary: '#d2a15b', pattern: 0.9 },
+  },
+]
+
+export const moreProjects = [
+  {
+    title: 'Place Value Adventure',
+    summary: 'Released educational desktop game · Python · Tkinter · Pytest',
+    repo: 'https://github.com/akshay9192/Place-value-game',
+  },
+  {
+    title: 'ClearPath Tutor',
+    summary: 'Production tutoring website · HTML · CSS · JavaScript',
+    repo: 'https://github.com/akshay9192/clearpathtutor',
+    live: 'https://akshay9192.github.io/clearpathtutor/',
+  },
+  {
+    title: 'Number Line Adventure',
+    summary: 'Educational game prototype · Python · Pygame',
+    repo: 'https://github.com/akshay9192/Number-line',
+  },
+  {
+    title: 'Algorithms Visualizer',
+    summary: 'Programming experiment',
+    repo: 'https://github.com/akshay9192/Algorithms-visualizer',
+  },
+  {
+    title: 'HTTP Server',
+    summary: 'Build-your-own HTTP server exercise',
+    repo: 'https://github.com/akshay9192/HTTPServer',
+  },
+  {
+    title: 'Tokenizer',
+    summary: 'Tokenizer/interpreter exercise',
+    repo: 'https://github.com/akshay9192/Tokenizer',
   },
 ]
 
