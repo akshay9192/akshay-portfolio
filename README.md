@@ -72,19 +72,7 @@ Generated images are explicitly identified as conceptual artwork rather than app
 
 ## Portrait workflow
 
-The profile deliberately does not substitute an emblem or generated face. Supply the original photograph at:
-
-```text
-public/images/akshay-portrait-source.jpg
-```
-
-The source must be preserved. The integration workflow should correct orientation, crop intentionally, apply restrained colour correction, retain natural skin texture and export responsive WebP derivatives headed by:
-
-```text
-public/images/akshay-portrait.webp
-```
-
-No generative face alteration is permitted.
+The profile uses Akshay's original public profile photograph. The untouched source is preserved at `public/images/akshay-portrait-source.jpg`; responsive 480 px, 800 px and 1200 px WebP derivatives are served through a native `picture` element. Styling is limited to restrained browser-side colour treatment and cropping. No generative face alteration is used.
 
 ## Deployment compatibility
 

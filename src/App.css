@@ -278,14 +278,15 @@
 .profile-heading h1 { font-size: clamp(4rem, 8vw, 9.5rem); line-height: .9; }
 .profile-heading > p:last-child { align-self: end; max-width: 480px; margin: 0 0 1rem; color: var(--text-secondary); }
 .profile-composition { display: grid; max-width: var(--max); margin: 0 auto; grid-template-columns: minmax(320px, .85fr) minmax(340px, .65fr); gap: 7vw; align-items: center; padding: clamp(4rem, 8vw, 8rem) 0; border-top: 1px solid var(--border); }
-.portrait-pending { position: relative; display: grid; min-height: min(74vw, 780px); place-items: end start; overflow: hidden; padding: clamp(1.5rem, 4vw, 3.5rem); border: 1px solid var(--border); background: var(--background-secondary); }
-.portrait-pending::before, .portrait-grid { position: absolute; inset: 0; content: ''; }
-.portrait-pending::before { background: radial-gradient(circle at 50% 35%, rgba(94,214,232,.12), transparent 30%); }
-.portrait-grid { background-image: linear-gradient(rgba(232,230,225,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(232,230,225,.055) 1px, transparent 1px); background-size: 58px 58px; mask-image: linear-gradient(black, transparent); }
-.portrait-pending::after { position: absolute; top: 12%; right: 14%; width: 48%; aspect-ratio: .72; border: 1px solid var(--cyan); border-radius: 50% 50% 44% 44%; opacity: .25; content: ''; }
-.portrait-pending > div { position: relative; z-index: 2; display: flex; flex-direction: column; }
-.portrait-pending span, .portrait-pending small { color: var(--text-muted); font-family: var(--mono); font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; }
-.portrait-pending strong { margin: 8px 0; font-family: var(--heading); font-size: clamp(1.4rem, 2.5vw, 2.5rem); font-weight: 400; }
+.profile-portrait { position: relative; min-height: min(74vw, 780px); overflow: hidden; margin: 0; border: 1px solid var(--border); background: var(--background-secondary); }
+.profile-portrait picture, .profile-portrait img { display: block; width: 100%; height: 100%; }
+.profile-portrait picture { position: absolute; inset: 0; }
+.profile-portrait img { object-fit: cover; object-position: 50% 46%; filter: saturate(.82) contrast(1.04); }
+.profile-portrait::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(8,9,11,.86)); content: ''; pointer-events: none; }
+.profile-portrait .portrait-grid { position: absolute; z-index: 1; inset: 0; background-image: linear-gradient(rgba(232,230,225,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(232,230,225,.045) 1px, transparent 1px); background-size: 58px 58px; mask-image: linear-gradient(black, transparent 72%); pointer-events: none; }
+.profile-portrait figcaption { position: absolute; z-index: 2; right: clamp(1.5rem, 4vw, 3.5rem); bottom: clamp(1.5rem, 4vw, 3.5rem); left: clamp(1.5rem, 4vw, 3.5rem); display: flex; flex-direction: column; }
+.profile-portrait figcaption span, .profile-portrait figcaption small { color: var(--text-muted); font-family: var(--mono); font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; }
+.profile-portrait figcaption strong { margin: 8px 0; font-family: var(--heading); font-size: clamp(1.4rem, 2.5vw, 2.5rem); font-weight: 400; }
 .profile-identity dl { margin: 3rem 0; }
 .profile-identity dl div { display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; padding: 14px 0; border-bottom: 1px solid var(--border); }
 .profile-identity dt { color: var(--text-muted); font-family: var(--mono); font-size: .56rem; text-transform: uppercase; }
@@ -409,7 +410,7 @@
   .profile-view { padding-top: 110px; }
   .profile-heading { min-height: 670px; }
   .profile-composition { grid-template-columns: 1fr; }
-  .portrait-pending { min-height: 660px; }
+  .profile-portrait { min-height: 660px; }
   .profile-identity { padding-block: 3rem; }
   .technical-index header { align-items: flex-start; flex-direction: column; gap: 1rem; }
   .technical-index li { min-height: 124px; grid-template-columns: 42px 1fr 20px; gap: 10px; padding-block: 16px; }
@@ -446,7 +447,7 @@
   .case-navigation { grid-template-columns: 1fr; }
   .case-navigation a + a { align-items: flex-start; border-top: 1px solid var(--border); border-left: 0; text-align: left; }
   .profile-heading h1, .contact-view h1 { font-size: clamp(3.2rem, 13.5vw, 5.3rem); }
-  .portrait-pending { min-height: 570px; }
+  .profile-portrait { min-height: 570px; }
   .profile-next { align-items: flex-start; flex-direction: column; justify-content: center; }
   .contact-links { grid-template-columns: 1fr; }
   .contact-links a + a { border-left: 0; }
@@ -467,7 +468,7 @@
   .project-index li.is-active .project-name, .project-index .project-row:hover .project-name { transform: translateX(3px); }
   .case-artwork img { min-height: 300px; }
   .case-content h2, .technical-index h2, .profile-identity h2 { font-size: 2.35rem; }
-  .portrait-pending { min-height: 500px; }
+  .profile-portrait { min-height: 500px; }
   .profile-identity dl div { grid-template-columns: 80px 1fr; gap: 10px; }
   .technical-index li { grid-template-columns: 34px 1fr 16px; }
 }

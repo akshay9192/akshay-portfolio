@@ -1,6 +1,8 @@
 import { education, profileIndex } from '../data/portfolio'
 
 export function ProfileView() {
+  const assetBase = import.meta.env.BASE_URL
+
   return (
     <div className="route-view profile-view">
       <header className="profile-heading">
@@ -10,10 +12,25 @@ export function ProfileView() {
       </header>
 
       <section className="profile-composition" aria-labelledby="profile-identity">
-        <div className="portrait-pending" role="img" aria-label="Portrait of Akshay Harwalkar will appear here once the supplied source photograph is prepared.">
+        <figure className="profile-portrait">
+          <picture>
+            <source
+              srcSet={`${assetBase}images/akshay-portrait-480.webp 480w, ${assetBase}images/akshay-portrait-800.webp 800w, ${assetBase}images/akshay-portrait.webp 1200w`}
+              sizes="(max-width: 768px) calc(100vw - 32px), 48vw"
+              type="image/webp"
+            />
+            <img
+              src={`${assetBase}images/akshay-portrait-source.jpg`}
+              alt="Akshay Harwalkar wearing a black shirt against a light neutral background."
+              width="1200"
+              height="1600"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
           <span className="portrait-grid" aria-hidden="true" />
-          <div><span>PORTRAIT INPUT</span><strong>Awaiting supplied photograph</strong><small>public/images/akshay-portrait-source.jpg</small></div>
-        </div>
+          <figcaption><span>Profile / 01</span><strong>Akshay Harwalkar</strong><small>Sydney, Australia</small></figcaption>
+        </figure>
         <div className="profile-identity">
           <p className="case-label">Visible layer</p>
           <h2 id="profile-identity">Akshay Harwalkar</h2>
